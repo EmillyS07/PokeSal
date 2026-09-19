@@ -48,7 +48,7 @@
 | Definição do Requisito Autoral 1 e 2 | Emilly Santos Moreira da Silva | 18/09/2026 | Concluído |
 | Definição do Requisito Autoral 3 | Daiana Pinto da Silva | 18/09/2026 | Concluído |
 | Modelagem do Diagrama de Casos de Uso | Emilly Santos Moreira da Silva | 19/09/2026 | Pendente |
-| Modelagem do Diagrama de Classes | Daiana Pinto da Silva | 19/09/2026 | Pendente |
+| Modelagem do Diagrama de Classes | Daiana Pinto da Silva | 19/09/2026 | Concluído |
 | Revisão conjunta dos documentos | Daiana Pinto da Silva e Emilly Santos Moreira da Silva | 19/09/2026 | Pendente |
 
 ### 6. Encerramento
