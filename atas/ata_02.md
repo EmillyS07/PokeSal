@@ -4,7 +4,7 @@
 
 | **Nome da Equipe / Dupla:** | Equipe Rocket                  |
 | --------------------------- | ------------------------------ |
-| **Data e Horário:**         | 18/09/2026, das 15:00 às 15:30 |
+| **Data e Horário:**         | 19/09/2026, das 15:00 às 15:30 |
 | **Local / Plataforma:**     | Google Meet                    |
 | **Fase do Projeto:**        | Fase 01 - Análise e Modelagem  |
 
