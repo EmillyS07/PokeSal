@@ -42,26 +42,26 @@ Relatório de Inspeção/Revisão dos requisitos, identificando ambiguidades, om
 
 ### 4. Sistema de Batalha por Turnos e Iniciativa
 
-| **ID** | **Requisito** | **Problema identificado** | **Classificação** | **Impacto / Necessidade de esclarecimento** |
-|---|---|---|---|---|
-| REQ-01 | Efeitos de terreno | Não está definido como o terreno é selecionado no início da batalha. | Omissão | É necessário definir se o terreno é escolhido pelo jogador, sorteado ou previamente determinado. |
-| REQ-02 | Efeitos de terreno | Não está definido se o terreno pode mudar durante a batalha. | Omissão | É necessário determinar se existe apenas um terreno por batalha ou se o terreno pode mudar durante a batalha. |
-| REQ-03 | Efeitos de terreno | Não está definida a ordem de aplicação dos efeitos de terreno e dos multiplicadores de vantagem/desvantagem elemental. | Ambiguidade | É necessário informar, pois a ausência dessa informação pode gerar resultados diferentes para o cálculo do dano final. |
-| REQ-04 | Asfalto Quente (Dia): aumenta o dano de golpes do tipo Fogo em 15% | Não é informado como o bônus de 15% deve ser calculado. | Ambiguidade | É necessário definir em qual etapa o bônus de terreno é aplicado, se será em relação ao dano base do golpe ou após a aplicação dos multiplicadores de vantagem/desvantagem elemental. |
-| REQ-05 | Asfalto Quente (Dia) | Não está definido como o sistema determina que é “Dia”. | Omissão | É necessário definir se o período é informado pelo jogador, sorteado ou determinado por algum mecanismo de tempo durante a batalha. |
-| REQ-06 | Poça de Chuva / Piso Escorregadio: golpes de Água aplicam 10% adicionais de precisão ou dano | O requisito apresenta duas possibilidades diferentes. | Ambiguidade | É necessário definir qual atributo receberá o bônus de 10%. |
-| REQ-07 | Poça de Chuva / Piso Escorregadio | Não está definido como funciona o bônus de precisão caso essa opção seja escolhida. | Omissão | É necessário definir como a precisão será calculada e aplicada. |
-| REQ-08 | Canteiro Central: Pokésal do tipo Planta recupera 5% do HP máximo ao final de cada turno | Não está especificado se a recuperação pode ultrapassar o HP máximo. | Omissão | É necessário definir um limite para a recuperação de HP. |
-| REQ-09 | Canteiro Central: Pokésal do tipo Planta recupera 5% do HP máximo ao final de cada turno | Não está definido se um Pokésal do tipo Planta derrotado durante o turno pode receber a recuperação de HP do terreno. | Omissão | É necessário definir se o efeito de recuperação é aplicado somente a Pokésal com HP maior que 0 ou também a Pokésal que tenham chegado a 0 HP durante o turno. |
+| **ID** | **Requisito** | **Problema identificado** | **Classificação** | **Impacto / Necessidade de esclarecimento** | **Esclarecimento** | 
+|---|---|---|---|---|---|
+| REQ-01 | A ordem de ataque do turno é determinada estritamente pelo atributo SPD. | Não está definido o que acontecerá quando os Pokésais possuírem o mesmo valor de SPD. | Omissão | É necessário definir um critério de desempate para determinar quem irá atacar primeiro. | A ordem de ataque será definida pelos seguintes critérios, nesta sequência: SPD, ATK e DEF. |
+| REQ-02 | Paralisado: reduz SPD. | Não está definido quanto da SPD deve ser reduzido. | Omissão | É necessário definir o valor ou percentual da redução. | A Paralisia reduz a SPD em 10%. |
+| REQ-03 | Queimado: reduz HP e ATK. | Não estão definidos os valores ou percentuais das reduções de HP e ATK. | Omissão | É necessário definir o valor ou percentual da redução. | A Queimadura reduz o HP atual e o ATK em 10%. |
+| REQ-04 | Envenenado: causa dano progressivo. | Não está definido quanto dano é causado nem como o dano progride. | Omissão | É necessário definir o valor do dano e como será a progressão. | O dano é calculado sobre o ATK do Pokésal de Planta que aplicou o status: 2% no primeiro turno, 4% no segundo e 6% no terceiro. |
+| REQ-05 | Aplicação de efeitos de status no final do turno. | Não está especificado por quantos turnos cada efeito permanecerá ativo. | Omissão | É necessário estabelecer a duração dos efeitos. | Os efeitos de status permanecem ativos por 3 turnos. |
+| REQ-06 | Aplicação dos efeitos de status no final do turno. | Não está definida a ordem de aplicação entre os efeitos de status e os efeitos de terreno que ocorrem no final do turno. | Ambiguidade       | É necessário definir a ordem, pois isso pode resultar em diferentes comportamentos durante a batalha. | Primeiro são aplicados os efeitos do terreno e, depois, os efeitos de status. |
+| REQ-07 | Efeitos de Status. | Não está definido se um Pokésal pode possuir mais de um efeito de status simultaneamente. | Omissão | É necessário determinar se os efeitos podem ser acumulados ou se um novo status substitui o anterior. | Caso receba um novo efeito, este substituirá o status anterior. |
+| REQ-08 | Efeitos de Status. | Não está definido como os efeitos de status são aplicados aos Pokésais. | Omissão | É necessário definir quais golpes podem aplicar cada efeito de status e em quais condições. | Pokésal de Fogo aplica Queimadura; Pokésal de Água aplica Paralisia; Pokésal de Planta aplica Envenenamento. |
 
 ---
 
 ### 5. Gerenciamento de Mochila (Itens de Batalha)
 
-| **ID** | **Requisito analisado** | **Problema identificado** | **Classificação** | **Impacto / Necessidade de esclarecimento** |
-|---|---|---|---|---|
-| REQ-01 | Cada treinador pode usar no máximo 2 itens por batalha | Não está definido se os dois usos permitidos podem ser do mesmo tipo de item ou se devem ser de tipos diferentes. | Ambiguidade | É necessário definir se um treinador pode utilizar o mesmo item duas vezes na batalha ou se deve utilizar dois itens diferentes. |
-| REQ-02 | Cada treinador pode usar no máximo 2 itens por batalha | Não está definido como e quando os itens serão disponibilizados ao jogador. | Omissão | É necessário definir se os itens serão escolhidos pelo treinador antes do início da batalha, disponibilizados aleatoriamente antes ou durante a batalha, ou escolhidos durante a batalha. |
-| REQ-03 | Exemplos: Potion, Super Potion e Antidote | Os efeitos dos itens não foram definidos. | Omissão | É necessário especificar o efeito de cada item. |
-| REQ-04 | Usar um item consome o turno do treinador | Não está definido se o item é aplicado antes ou depois da ação do oponente no fluxo do turno. | Ambiguidade | É necessário determinar o momento exato do uso do item. |
+| **ID** | **Requisito** | **Problema identificado** | **Classificação** | **Impacto / Necessidade de esclarecimento** | **Esclarecimento** |
+|---|---|---|---|---|---|
+| REQ-01 | Cada treinador pode usar no máximo 2 itens por batalha. | Não está definido se os dois usos permitidos podem ser do mesmo tipo de item ou se devem ser de tipos diferentes. | Ambiguidade | É necessário definir se um treinador pode utilizar o mesmo item duas vezes na batalha ou se deve utilizar dois itens diferentes. | Podem ser do mesmo tipo, desde que o treinador não ultrapasse o limite de dois usos por batalha. |
+| REQ-02 | Cada treinador pode usar no máximo 2 itens por batalha. | Não está definido como e quando os itens serão disponibilizados ao jogador. | Omissão | É necessário definir se os itens serão escolhidos pelo treinador antes do início da batalha, disponibilizados aleatoriamente antes ou durante a batalha, ou escolhidos durante a batalha. | Os 2 itens de cada treinador são sorteados antes do início da batalha. |
+| REQ-03 | Exemplos: Potion, Super Potion e Antidote. | Os efeitos dos itens não foram definidos. | Omissão | É necessário especificar o efeito de cada item. | A Potion recupera 20 HP, a Super Potion recupera 40 HP e o Antidote remove o efeito de Envenenamento. |
+| REQ-04 | Usar um item consome o turno do treinador. | Não está definido se o item é aplicado antes ou depois da ação do oponente no fluxo do turno. | Ambiguidade | É necessário determinar o momento exato do uso do item. | O efeito do item é aplicado instantaneamente no momento em que o treinador o utiliza. |
+
 
