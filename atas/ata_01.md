@@ -12,7 +12,7 @@
 
 | **Membro** | **Status** | **Assinatura Digital / De acordo** |
 |---|---|---|
-| **Emilly Santos Moreira da Silva** | Presente | |
+| **Emilly Santos Moreira da Silva** | Presente | | ![Assinatura Emilly](assinatura_emilly.png)
 | **Daiana Pinto da Silva** | Presente | ![Assinatura Daiana](assinatura_daiana.png) |
 
 ### 3. Pautas da Reunião
