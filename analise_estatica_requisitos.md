@@ -27,16 +27,16 @@ Relatório de Inspeção/Revisão dos requisitos, identificando ambiguidades, om
 
 ### 3. Mecânica do Estacionamento da UCSal (Efeito de Terreno)
 
-| **ID** | **Requisito** | **Problema identificado** | **Classificação** | **Impacto / Necessidade de esclarecimento** |
-|---     |---            |---                        |---                |---                                          |
-| REQ-01 | Efeitos de terreno | Não está definido como o terreno é selecionado no início da batalha. | Omissão | É necessário definir se o terreno é escolhido pelo jogador, sorteado ou previamente determinado. |
-| REQ-02 | Efeitos de terreno | Não está definido se o terreno pode mudar durante a batalha. | Omissão | É necessário determinar se existe apenas um terreno por batalha ou se o terreno pode mudar durante a batalha. |
-| REQ-03 | Efeitos de terreno | Não está definida a ordem de aplicação dos efeitos de terreno e dos multiplicadores de vantagem/desvantagem elemental. | Ambiguidade | É necessário informar, pois a ausência dessa informação pode gerar resultados diferentes para o cálculo do dano final. |
-| REQ-04 | Asfalto Quente (Dia): aumenta o dano de golpes do tipo Fogo em 15% | Não é informado como o bônus de 15% deve ser calculado. | Ambiguidade | É necessário definir em qual etapa o bônus de terreno é aplicado, se será em relação ao dano base do golpe ou após a aplicação dos multiplicadores de vantagem/desvantagem elemental. |
-| REQ-05 | Poça de Chuva / Piso Escorregadio: golpes de Água aplicam 10% adicionais de precisão ou dano | O requisito apresenta duas possibilidades diferentes. | Ambiguidade | É necessário definir qual atributo receberá o bônus de 10%. |
-| REQ-06 | Poça de Chuva / Piso Escorregadio | Não está definido como funciona o bônus de precisão caso essa opção seja escolhida. | Omissão | É necessário definir como a precisão será calculada e aplicada. |
-| REQ-07 | Canteiro Central: Pokésal do tipo Planta recupera 5% do HP máximo ao final de cada turno | Não está especificado se a recuperação pode ultrapassar o HP máximo. | Omissão | É necessário definir um limite para a recuperação de HP. |
-| REQ-08 | Canteiro Central: Pokésal do tipo Planta recupera 5% do HP máximo ao final de cada turno | Não está definido se um Pokésal do tipo Planta derrotado durante o turno pode receber a recuperação de HP do terreno. | Omissão | É necessário definir se o efeito de recuperação é aplicado somente a Pokésal com HP maior que 0 ou também a Pokésal que tenham chegado a 0 HP durante o turno. |
+| **ID** | **Requisito** | **Problema identificado** | **Classificação** | **Impacto / Necessidade de esclarecimento** | **Esclarecimento** |
+|---|---|---|---|---|---|
+| REQ-01 | Efeitos de terreno | Não está definido como o terreno é selecionado no início da batalha. | Omissão | É necessário definir se o terreno é escolhido pelo jogador, sorteado ou previamente determinado. | O terreno é sorteado aleatoriamente no início da batalha. |
+| REQ-02 | Efeitos de terreno | Não está definido se o terreno pode mudar durante a batalha. | Omissão | É necessário determinar se existe apenas um terreno por batalha ou se o terreno pode mudar durante a batalha. | Cada batalha possui apenas um terreno. |
+| REQ-03 | Efeitos de terreno | Não está definida a ordem de aplicação dos efeitos de terreno e dos multiplicadores de vantagem/desvantagem elemental. | Ambiguidade | É necessário informar, pois a ausência dessa informação pode gerar resultados diferentes para o cálculo do dano final. | Primeiro é aplicado o efeito do terreno e, depois, o multiplicador de vantagem/desvantagem elemental. |
+| REQ-04 | Asfalto Quente (Dia): aumenta o dano de golpes do tipo Fogo em 15% | Não é informado como o bônus de 15% deve ser calculado. | Ambiguidade | É necessário definir em qual etapa o bônus de terreno é aplicado, se será em relação ao dano base do golpe ou após a aplicação dos multiplicadores de vantagem/desvantagem elemental. | É aplicado sobre o dano base do golpe, antes da aplicação do multiplicador elemental. |
+| REQ-05 | Poça de Chuva / Piso Escorregadio: golpes de Água aplicam 10% adicionais de precisão ou dano | O requisito apresenta duas possibilidades diferentes. | Ambiguidade | É necessário definir qual atributo receberá o bônus de 10%. | Recebem 10% de bônus no dano. |
+| REQ-06 | Poça de Chuva / Piso Escorregadio | Não está definido como funciona o bônus de precisão caso essa opção seja escolhida. | Omissão | É necessário definir como a precisão será calculada e aplicada. | Não se aplica. |
+| REQ-07 | Canteiro Central: Pokésal do tipo Planta recupera 5% do HP máximo ao final de cada turno | Não está especificado se a recuperação pode ultrapassar o HP máximo. | Omissão | É necessário definir um limite para a recuperação de HP. | Não pode ultrapassar 200 HP, que é o HP máximo de um Pokésal. |
+| REQ-08 | Canteiro Central: Pokésal do tipo Planta recupera 5% do HP máximo ao final de cada turno | Não está definido se um Pokésal do tipo Planta derrotado durante o turno pode receber a recuperação de HP do terreno. | Omissão | É necessário definir se o efeito de recuperação é aplicado somente a Pokésais com HP maior que 0 ou também a Pokésais que tenham chegado a 0 HP durante o turno. | O Pokésal que chegar a 0 HP é derrotado imediatamente e não recebe nenhum bônus. |
 
 ---
 
